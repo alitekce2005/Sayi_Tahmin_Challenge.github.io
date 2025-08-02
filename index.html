@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images//gamepp.jpeg" type="image/png">
+    <title>🎯 Sayı Tahmin Challenge</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="matrix-rain" id="matrixRain"></div>
+    
+    <div class="game-container">
+        <div class="game-header">
+            <div class="game-title">🎯 Sayı Tahmin Challenge</div>
+            <div class="game-subtitle">Neon Kodları Çöz</div>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="attemptNumber">1</div>
+                    <div class="stat-label">Deneme</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="livesLeft">7</div>
+                    <div class="stat-label">Kalan</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">4</div>
+                    <div class="stat-label">Hedef</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="game-content">
+            <div class="legend">
+                <div class="legend-item">
+                    <div class="legend-icon correct-icon">✓</div>
+                    <div class="legend-text">Doğru</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon wrong-pos-icon">↻</div>
+                    <div class="legend-text">Yanlış Yer</div>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-icon incorrect-icon">✗</div>
+                    <div class="legend-text">Yanlış</div>
+                </div>
+            </div>
+
+            <div class="input-section">
+                <div class="input-title">Matrix Kodunu Gir</div>
+                <div class="input-slots">
+                    <div class="input-slot active" id="slot0"></div>
+                    <div class="input-slot" id="slot1"></div>
+                    <div class="input-slot" id="slot2"></div>
+                    <div class="input-slot" id="slot3"></div>
+                </div>
+                <div class="result-display" id="resultDisplay"></div>
+            </div>
+
+            <div class="keyboard">
+                <div class="number-grid">
+                    <div class="number-key" onclick="inputDigit(1)" data-number="1">1</div>
+                    <div class="number-key" onclick="inputDigit(2)" data-number="2">2</div>
+                    <div class="number-key" onclick="inputDigit(3)" data-number="3">3</div>
+                    <div class="number-key" onclick="inputDigit(4)" data-number="4">4</div>
+                    <div class="number-key" onclick="inputDigit(5)" data-number="5">5</div>
+                    <div class="number-key" onclick="inputDigit(6)" data-number="6">6</div>
+                    <div class="number-key" onclick="inputDigit(7)" data-number="7">7</div>
+                    <div class="number-key" onclick="inputDigit(8)" data-number="8">8</div>
+                    <div class="number-key" onclick="inputDigit(9)" data-number="9">9</div>
+                    <div class="number-key" onclick="inputDigit(0)" data-number="0">0</div>
+                </div>
+                <div class="control-buttons">
+                    <button class="control-btn clear-btn" onclick="clearInput()">Temizle</button>
+                    <button class="control-btn submit-btn" onclick="submitGuess()" id="submitBtn">Gönder</button>
+                </div>
+            </div>
+
+            <div class="lives-section">
+                <div class="lives-text">Neon Canlar</div>
+                <div class="hearts-container" id="heartsContainer"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-message" id="gameMessage">
+        <div class="message-content">
+            <div class="message-title" id="messageTitle"></div>
+            <div class="message-text" id="messageText"></div>
+            <div class="secret-reveal" id="secretReveal" style="display: none;">
+                <div style="color: var(--neon-blue); margin-bottom: 10px;">Matrix Kodu:</div>
+                <div class="secret-numbers" id="secretNumbers"></div>
+            </div>
+            <button class="restart-btn" onclick="restartGame()">Yeni Matrix</button>
+        </div>
+    </div>
+
+</body>
+<script src="main.js"></script>
+</html>
