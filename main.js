@@ -3,7 +3,7 @@ let secretNumbers = [];
         let currentSlot = 0;
         let currentAttempt = 1;
         let gameActive = true;
-        let maxAttempts = 7;
+        let maxAttempts = 4;
 
         // Matrix rain effect
         function createMatrixRain() {
